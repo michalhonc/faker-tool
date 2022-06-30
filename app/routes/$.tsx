@@ -20,7 +20,7 @@ const loader: LoaderFunction = ({ params, request }) => {
   }
 
   const results = [];
-  const getResult = () => faker[root][functionKey](...functionParams);
+  const getResult = () => faker[root][functionKey](...functionParams.map(f => f === '_' ? undefined : f));
 
   if (Number.isInteger(numberOfItems) && numberOfItems !== 0) {
     for (let i = 0; i < numberOfItems; i++) {
@@ -30,7 +30,6 @@ const loader: LoaderFunction = ({ params, request }) => {
     results.push(getResult());
   }
 
-  console.log(results)
   return json({ data: results.join(delimiter) });
 };
 
