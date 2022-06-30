@@ -1,14 +1,13 @@
-name = "remix-cloudflare-workers"
+name = "faker"
 type = "javascript"
+main = "build/index.js"
 
-zone_id = ""
-account_id = ""
-route = ""
+account_id = "bfa8e5490905d68f7d555f04a6ab737d"
+route = "faker"
 workers_dev = true
 
 [site]
 bucket = "./public"
-entry-point = "."
 
 [build]
 command = "npm run build"
