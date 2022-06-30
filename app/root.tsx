@@ -1,11 +1,8 @@
 import type { MetaFunction } from "@remix-run/cloudflare";
 import {
   Links,
-  LiveReload,
   Meta,
   Outlet,
-  Scripts,
-  ScrollRestoration,
 } from "@remix-run/react";
 
 export const meta: MetaFunction = () => ({
@@ -23,9 +20,6 @@ export default function App() {
       </head>
       <body>
         <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
       </body>
     </html>
   );
